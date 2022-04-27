@@ -1,30 +1,59 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <!-- navigation -->
+  <Navbar />
+  <!-- navigation -->
+
+  <!-- body -->
+  <div class="main-body">
+    <router-view />
+  </div>
+  <!-- body -->
+
+  <!-- footer -->
+  <Footer />
+  <!-- footer -->
 </template>
 
+<script>
+// @ is an alias to /src
+
+// layout components
+import Navbar from "@/components/layout/Navbar.vue";
+import Footer from "@/components/layout/Footer.vue";
+// layout components
+
+// JQuery
+import $ from "jquery";
+// JQuery
+
+// bootstrap js bundle
+import bootstrap from "bootstrap";
+// bootstrap js bundle
+
+export default {
+  name: "App",
+  components: {
+    Navbar,
+    Footer,
+  },
+};
+
+// JQuery methods
+
+// JQuery methods
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+// theme colors
+$navy-blue: #002367;
+// theme colors
 
-nav {
-  padding: 30px;
+// bootstrap css
+@import "../node_modules/bootstrap";
+// bootstrap css
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+body {
+  padding: 0 !important;
+  margin: 0 !important;
 }
 </style>
