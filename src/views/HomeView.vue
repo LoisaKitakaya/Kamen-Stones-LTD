@@ -31,7 +31,7 @@ $navy-blue: #002367;
 }
 
 .logo-container img {
-  // width: 175px;
+  width: 175px;
 }
 
 .logo-container {
