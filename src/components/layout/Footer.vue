@@ -2,7 +2,7 @@
   <footer class="container-fluid navbar-light bg-light">
     <hr />
     <!-- newsletter form -->
-    <form action="#" method="post">
+    <form action="#">
       <h3 class="text-center">Subscribe to Newsletter</h3>
       <br />
       <div class="subscribe input-group mb-3">
@@ -102,7 +102,7 @@ footer {
   );
 }
 
-form {
+footer form {
   width: 50%;
   margin: auto;
   font-family: $Raleway;
@@ -162,7 +162,7 @@ form {
     width: auto !important;
   }
 
-  form {
+  footer form {
     width: auto !important;
   }
 
