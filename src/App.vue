@@ -22,10 +22,6 @@ import Navbar from "@/components/layout/Navbar.vue";
 import Footer from "@/components/layout/Footer.vue";
 // layout components
 
-// JQuery
-import $ from "jquery";
-// JQuery
-
 // bootstrap js bundle
 import bootstrap from "bootstrap";
 // bootstrap js bundle
@@ -37,10 +33,6 @@ export default {
     Footer,
   },
 };
-
-// JQuery methods
-
-// JQuery methods
 </script>
 
 <style lang="scss">
