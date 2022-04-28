@@ -1,8 +1,10 @@
 <template>
-  <nav class="navbar sticky-top navbar-light bg-light">
+  <nav class="navbar navbar-light bg-light" id="top">
     <div class="container-fluid">
       <!-- home link -->
-      <a class="navbar-brand" href="#" id="home-btn">Kamen Stones</a>
+      <router-link to="/" class="navbar-brand fs-2" id="home-btn"
+        >Kamen Stones</router-link
+      >
       <!-- home link -->
 
       <!-- menu links -->
@@ -69,7 +71,7 @@
         aria-labelledby="offcanvasNavbarLabel"
       >
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+          <h5 class="offcanvas-title fs-2" id="offcanvasNavbarLabel">Menu</h5>
           <button
             type="button"
             class="btn-close text-reset"
@@ -79,19 +81,19 @@
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav" id="offcanvas-menu">
-            <li class="nav-item">
+            <li class="nav-item fs-3">
               <a href="#" class="nav-link">About Us</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item fs-3">
               <a href="#" class="nav-link">Price List</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item fs-3">
               <a href="#" class="nav-link">Products</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item fs-3">
               <a href="#" class="nav-link">Careers</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item fs-3">
               <a href="#" class="nav-link">Contacts</a>
             </li>
           </ul>
@@ -113,13 +115,6 @@ export default {
 
 // JQuery methods
 $(document).ready(() => {
-  //
-  $(window).scroll(() => {
-    let myPos = $(window).scrollTop();
-
-    console.log(myPos);
-  });
-
   //
   let aboutBtn = $("#about-btn");
   let priceBtn = $("#price-btn");
@@ -170,9 +165,32 @@ $(document).ready(() => {
 $dark: rgb(30, 25, 25);
 // colors
 
+// font
+$Courgette: "Courgette", cursive;
+$Raleway: "Raleway", sans-serif;
+// font
+
+nav {
+  font-family: $Raleway;
+  background: rgb(165, 180, 252);
+  background: linear-gradient(
+    90deg,
+    rgba(165, 180, 252, 1) 0%,
+    rgba(221, 214, 254, 1) 100%
+  );
+}
+
+.navbar-brand {
+  font-family: $Courgette;
+}
+
 .navbar-nav {
   display: flex !important;
   flex-direction: row !important;
+}
+
+.navbar-brand:hover {
+  color: rgb(50, 50, 50) !important;
 }
 
 #menu-toggle {
@@ -187,10 +205,33 @@ $dark: rgb(30, 25, 25);
   color: $dark !important;
 }
 
+.offcanvas {
+  background: rgb(165, 180, 252);
+  background: linear-gradient(
+    90deg,
+    rgba(165, 180, 252, 1) 0%,
+    rgba(221, 214, 254, 1) 100%
+  );
+}
+
 #offcanvas-menu {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
+}
+
+.nav,
+.nav-tabs {
+  border-color: gray !important;
+}
+
+.nav-tabs .active {
+  border-color: gray !important;
+  background-color: #f0f9ffa8 !important;
+}
+
+.nav-link:hover {
+  border-color: gray !important;
 }
 
 @media screen and (max-width: 600px) {

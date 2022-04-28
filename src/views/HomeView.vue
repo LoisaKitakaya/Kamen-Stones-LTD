@@ -26,13 +26,9 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
   name: "HomeView",
-  components: {
-    HelloWorld,
-  },
 };
 </script>
 
@@ -49,7 +45,7 @@ $svg-background: url("@/assets/home-bg.jpg");
   align-items: center;
   background-color: #000022;
   background-image: $svg-background;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -70,30 +66,35 @@ $svg-background: url("@/assets/home-bg.jpg");
 .logo-container img {
   border-radius: 50%;
   transition-timing-function: ease-in-out;
+  width: 550px;
+  transform: translateY(-25px);
 }
 
 .logo-container:hover {
-  transform: translateY(-5px) scale(1.025) rotate(5deg);
+  transform: scale(1.025);
   cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {
   .home {
     flex-wrap: wrap-reverse;
+    width: auto !important;
   }
 
   .caption {
     width: auto;
     margin: 1rem;
+    text-align: center;
   }
 
   .logo-container {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     margin-top: 2rem;
   }
 
   .logo-container img {
     width: 350px;
+    transform: translateY(0);
   }
 
   .logo-container:hover {
