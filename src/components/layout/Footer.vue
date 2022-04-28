@@ -75,7 +75,7 @@ $(document).ready(() => {
   $(window).scroll(() => {
     let myPos = $(window).scrollTop();
 
-    if (myPos > 400) {
+    if (myPos > 600) {
       topBtn.show();
     } else {
       topBtn.hide();
@@ -149,12 +149,11 @@ form {
   right: 1.5rem;
   color: black !important;
   font-family: $Courgette;
-  font-weight: bold;
   text-decoration: none;
 }
 
 #my-link:hover {
-  color: black !important;
+  color: rgb(50, 50, 50) !important;
 }
 
 @media screen and (max-width: 600px) {

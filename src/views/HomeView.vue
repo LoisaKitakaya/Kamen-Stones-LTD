@@ -7,7 +7,7 @@
         improvement.
       </p>
       <p class="text-light fs-2">
-        Equally important, we are committed to providing quality products and
+        We are committed to providing quality products and
         services to our customers.
       </p>
       <p class="text-light fs-2">

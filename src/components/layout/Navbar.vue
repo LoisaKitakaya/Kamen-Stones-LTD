@@ -2,7 +2,7 @@
   <nav class="navbar navbar-light bg-light" id="top">
     <div class="container-fluid">
       <!-- home link -->
-      <router-link to="/" class="navbar-brand fs-2" id="home-btn"
+      <router-link to="/" class="navbar-brand fs-3" id="home-btn"
         >Kamen Stones</router-link
       >
       <!-- home link -->
@@ -10,7 +10,9 @@
       <!-- menu links -->
       <ul class="nav nav-tabs" id="full-menu">
         <li class="nav-item">
-          <a href="#" class="nav-link" id="about-btn">About Us</a>
+          <router-link to="/about" class="nav-link" id="about-btn"
+            >About Us</router-link
+          >
         </li>
         <li class="nav-item dropdown">
           <a
@@ -23,26 +25,68 @@
             >Products</a
           >
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Base Material</a></li>
-            <li><a class="dropdown-item" href="#">Clay Soil</a></li>
-            <li><a class="dropdown-item" href="#">Fill Material</a></li>
-            <li><a class="dropdown-item" href="#">Landscape Rocks</a></li>
-            <li><a class="dropdown-item" href="#">Oversized</a></li>
-            <li><a class="dropdown-item" href="#">Rip Rap</a></li>
-            <li><a class="dropdown-item" href="#">Septic Fill</a></li>
-            <li><a class="dropdown-item" href="#">Top Soil</a></li>
+            <li>
+              <router-link to="/products" class="dropdown-item"
+                >All Products</router-link
+              >
+            </li>
             <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">All Products</a></li>
+            <li>
+              <router-link to="/products" class="dropdown-item"
+                >Base Material</router-link
+              >
+            </li>
+            <li>
+              <router-link to="/products" class="dropdown-item"
+                >Clay Soil</router-link
+              >
+            </li>
+            <li>
+              <router-link to="/products" class="dropdown-item"
+                >Fill Material</router-link
+              >
+            </li>
+            <li>
+              <router-link to="/products" class="dropdown-item"
+                >Landscape Rocks</router-link
+              >
+            </li>
+            <li>
+              <router-link to="/products" class="dropdown-item"
+                >Oversized</router-link
+              >
+            </li>
+            <li>
+              <router-link to="/products" class="dropdown-item"
+                >Rip Rap</router-link
+              >
+            </li>
+            <li>
+              <router-link to="/products" class="dropdown-item"
+                >Septic Fill</router-link
+              >
+            </li>
+            <li>
+              <router-link to="/products" class="dropdown-item"
+                >Top Soil</router-link
+              >
+            </li>
           </ul>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link" id="price-btn">Price List</a>
+          <router-link to="/price-list" class="nav-link" id="price-btn"
+            >Price List</router-link
+          >
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link" id="careers-btn">Careers</a>
+          <router-link to="/career" class="nav-link" id="careers-btn"
+            >Careers</router-link
+          >
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link" id="contact-btn">Contacts</a>
+          <router-link to="/contacts" class="nav-link" id="contact-btn"
+            >Contacts</router-link
+          >
         </li>
       </ul>
       <!-- menu links -->
@@ -82,19 +126,28 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav" id="offcanvas-menu">
             <li class="nav-item fs-3">
-              <a href="#" class="nav-link">About Us</a>
+              <router-link to="/" class="nav-link">Home</router-link>
             </li>
             <li class="nav-item fs-3">
-              <a href="#" class="nav-link">Price List</a>
+              <router-link to="/about" class="nav-link">About Us</router-link>
             </li>
             <li class="nav-item fs-3">
-              <a href="#" class="nav-link">Products</a>
+              <router-link to="/price-list" class="nav-link"
+                >Price List</router-link
+              >
             </li>
             <li class="nav-item fs-3">
-              <a href="#" class="nav-link">Careers</a>
+              <router-link to="/products" class="nav-link"
+                >Products</router-link
+              >
             </li>
             <li class="nav-item fs-3">
-              <a href="#" class="nav-link">Contacts</a>
+              <router-link to="/career" class="nav-link">Careers</router-link>
+            </li>
+            <li class="nav-item fs-3">
+              <router-link to="/contacts" class="nav-link"
+                >Contacts</router-link
+              >
             </li>
           </ul>
         </div>
@@ -155,6 +208,18 @@ $(document).ready(() => {
     careersBtn.removeClass("active");
     priceBtn.removeClass("active");
     aboutBtn.removeClass("active");
+  });
+
+  let closeMenuBtn = $(".nav-link");
+  let offCanvas = $("#offcanvasNavbar");
+  let openMenuBtn = $("#menu-toggle");
+
+  openMenuBtn.click(() => {
+    offCanvas.show();
+  });
+
+  closeMenuBtn.click(() => {
+    offCanvas.hide();
   });
 });
 // JQuery methods
