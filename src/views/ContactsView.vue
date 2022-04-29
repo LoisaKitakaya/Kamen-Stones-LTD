@@ -56,7 +56,7 @@
         <ul>
           <li><strong>email:</strong> kamenstones@info.com</li>
           <li><strong>tel (paid):</strong> +2548942430</li>
-          <li><strong>tel (toll free):</strong> +2548093498)</li>
+          <li><strong>tel (toll free):</strong> +25480934982</li>
         </ul>
       </div>
     </div>

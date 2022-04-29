@@ -25,7 +25,7 @@
       </div>
       <p class="form-footer-text text-muted text-center">
         *Subscribe to our newsletter to receive early discount offers and new
-        templates info.
+        product info.
       </p>
       <br />
     </form>
@@ -62,27 +62,28 @@ export default {
       email: "",
     };
   },
-};
+  created() {
+    // JQuery methods
+    $(document).ready(() => {
+      //
+      let topBtn = $("#top-btn");
 
-// JQuery methods
-$(document).ready(() => {
-  //
-  let topBtn = $("#top-btn");
-
-  topBtn.hide();
-
-  //
-  $(window).scroll(() => {
-    let myPos = $(window).scrollTop();
-
-    if (myPos > 600) {
-      topBtn.show();
-    } else {
       topBtn.hide();
-    }
-  });
-});
-// JQuery methods
+
+      //
+      $(window).scroll(() => {
+        let myPos = $(window).scrollTop();
+
+        if (myPos > 700) {
+          topBtn.fadeIn();
+        } else {
+          topBtn.fadeOut();
+        }
+      });
+    });
+    // JQuery methods
+  },
+};
 </script>
 
 <style lang="scss">

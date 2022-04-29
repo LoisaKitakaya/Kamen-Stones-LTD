@@ -14,64 +14,10 @@
             >About Us</router-link
           >
         </li>
-        <li class="nav-item dropdown">
-          <a
-            href="#"
-            class="nav-link dropdown-toggle"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            id="products-btn"
-            >Products</a
+        <li class="nav-item">
+          <router-link to="/products" class="nav-link" id="product-btn"
+            >Products</router-link
           >
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li>
-              <router-link to="/products" class="dropdown-item"
-                >All Products</router-link
-              >
-            </li>
-            <li><hr class="dropdown-divider" /></li>
-            <li>
-              <router-link to="/products" class="dropdown-item"
-                >Base Material</router-link
-              >
-            </li>
-            <li>
-              <router-link to="/products" class="dropdown-item"
-                >Clay Soil</router-link
-              >
-            </li>
-            <li>
-              <router-link to="/products" class="dropdown-item"
-                >Fill Material</router-link
-              >
-            </li>
-            <li>
-              <router-link to="/products" class="dropdown-item"
-                >Landscape Rocks</router-link
-              >
-            </li>
-            <li>
-              <router-link to="/products" class="dropdown-item"
-                >Oversized</router-link
-              >
-            </li>
-            <li>
-              <router-link to="/products" class="dropdown-item"
-                >Rip Rap</router-link
-              >
-            </li>
-            <li>
-              <router-link to="/products" class="dropdown-item"
-                >Septic Fill</router-link
-              >
-            </li>
-            <li>
-              <router-link to="/products" class="dropdown-item"
-                >Top Soil</router-link
-              >
-            </li>
-          </ul>
         </li>
         <li class="nav-item">
           <router-link to="/price-list" class="nav-link" id="price-btn"
@@ -164,65 +110,80 @@ import $ from "jquery";
 
 export default {
   name: "Navbar",
+  created() {
+    // JQuery methods
+    $(document).ready(() => {
+      //
+      let aboutBtn = $("#about-btn");
+      let priceBtn = $("#price-btn");
+      let careersBtn = $("#careers-btn");
+      let contactsBtn = $("#contact-btn");
+      let productsBtn = $("#product-btn");
+      let homeBtn = $("#home-btn");
+
+      productsBtn.click(() => {
+        productsBtn.addClass("active");
+        aboutBtn.removeClass("active");
+        priceBtn.removeClass("active");
+        careersBtn.removeClass("active");
+        contactsBtn.removeClass("active");
+      });
+
+      homeBtn.click(() => {
+        aboutBtn.removeClass("active");
+        priceBtn.removeClass("active");
+        careersBtn.removeClass("active");
+        contactsBtn.removeClass("active");
+        productsBtn.removeClass("active");
+      });
+
+      aboutBtn.click(() => {
+        aboutBtn.addClass("active");
+        priceBtn.removeClass("active");
+        careersBtn.removeClass("active");
+        contactsBtn.removeClass("active");
+        productsBtn.removeClass("active");
+      });
+
+      priceBtn.click(() => {
+        priceBtn.addClass("active");
+        aboutBtn.removeClass("active");
+        careersBtn.removeClass("active");
+        contactsBtn.removeClass("active");
+        productsBtn.removeClass("active");
+      });
+
+      careersBtn.click(() => {
+        careersBtn.addClass("active");
+        priceBtn.removeClass("active");
+        aboutBtn.removeClass("active");
+        contactsBtn.removeClass("active");
+        productsBtn.removeClass("active");
+      });
+
+      contactsBtn.click(() => {
+        contactsBtn.addClass("active");
+        careersBtn.removeClass("active");
+        priceBtn.removeClass("active");
+        aboutBtn.removeClass("active");
+        productsBtn.removeClass("active");
+      });
+
+      let closeMenuBtn = $(".nav-link");
+      let offCanvas = $("#offcanvasNavbar");
+      let openMenuBtn = $("#menu-toggle");
+
+      openMenuBtn.click(() => {
+        offCanvas.show();
+      });
+
+      closeMenuBtn.click(() => {
+        offCanvas.hide();
+      });
+    });
+    // JQuery methods
+  },
 };
-
-// JQuery methods
-$(document).ready(() => {
-  //
-  let aboutBtn = $("#about-btn");
-  let priceBtn = $("#price-btn");
-  let careersBtn = $("#careers-btn");
-  let contactsBtn = $("#contact-btn");
-  let homeBtn = $("#home-btn");
-
-  homeBtn.click(() => {
-    aboutBtn.removeClass("active");
-    priceBtn.removeClass("active");
-    careersBtn.removeClass("active");
-    contactsBtn.removeClass("active");
-  });
-
-  aboutBtn.click(() => {
-    aboutBtn.addClass("active");
-    priceBtn.removeClass("active");
-    careersBtn.removeClass("active");
-    contactsBtn.removeClass("active");
-  });
-
-  priceBtn.click(() => {
-    priceBtn.addClass("active");
-    aboutBtn.removeClass("active");
-    careersBtn.removeClass("active");
-    contactsBtn.removeClass("active");
-  });
-
-  careersBtn.click(() => {
-    careersBtn.addClass("active");
-    priceBtn.removeClass("active");
-    aboutBtn.removeClass("active");
-    contactsBtn.removeClass("active");
-  });
-
-  contactsBtn.click(() => {
-    contactsBtn.addClass("active");
-    careersBtn.removeClass("active");
-    priceBtn.removeClass("active");
-    aboutBtn.removeClass("active");
-  });
-
-  let closeMenuBtn = $(".nav-link");
-  let offCanvas = $("#offcanvasNavbar");
-  let openMenuBtn = $("#menu-toggle");
-
-  openMenuBtn.click(() => {
-    offCanvas.show();
-  });
-
-  closeMenuBtn.click(() => {
-    offCanvas.hide();
-  });
-});
-// JQuery methods
 </script>
 
 <style lang="scss">
